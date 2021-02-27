@@ -3,8 +3,12 @@ import './Country.css'
 import React from 'react';
 
 function Country(props) {
-    console.log(props.country);
+    // console.log(props.country);
     const {name, flag, capital, population, region} = props.country;
+    const handleAddCountry = props.handleAddCountry;
+    // const countryP = props.country;
+    // const total = countryP.reduce((total,countryPopu) => total + countryPopu.population, 0)
+    // console.log(props);
     return (
         <div className='country-info'>
             <img src={flag} alt=""/>
@@ -12,6 +16,8 @@ function Country(props) {
             <h3>capital : {capital}</h3>
             <h3>Population : {population}</h3>
             <h3>region : {region}</h3>
+            <h4>Total added population: {total}</h4>
+            <button onClick={()=> handleAddCountry(props.country)}>Add country</button>
         </div>
     );
 }
